@@ -6,3 +6,11 @@
 #   sleep(5.5)
 #
 # После завершения блока должно вывестись в консоль примерно 5.5
+from datetime import datetime
+
+class timer():
+    def __enter__(self):
+        self.start = datetime.today()
+
+    def __exit__(self, *args):
+        print(datetime.today() - self.start)
